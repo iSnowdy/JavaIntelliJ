@@ -1,22 +1,36 @@
-import java.util.Arrays;
+public class Test {
 
-public class Test{
-    public static void main(String[] args) {
+    public static String arrayToCSV(int[][] inputArray) {
+        StringBuilder csvString = new StringBuilder();
 
-        int n = 35231;
+        for (int i = 0; i < inputArray.length; i++) {
+            for (int j = 0; j < inputArray[i].length; j++) {
+                csvString.append(inputArray[i][j]);
 
-        String originalInt = String.valueOf(n);
+                // Add a comma if it's not the last element in the row
+                if (j < inputArray[i].length - 1) {
+                    csvString.append(",");
+                }
+            }
 
-        int [] reversed = new int[originalInt.length()];
-
-        for (int i = 0; i < originalInt.length(); i ++) {
-            int number = Character.getNumericValue(originalInt.charAt(i));
-            reversed[originalInt.length() - 1 - i] = number;
+            // Add a new line if it's not the last row
+            if (i < inputArray.length - 1) {
+                csvString.append("\n");
+            }
         }
 
-        // 5 - 1 - 0 = posición 4... 5 - 1 - 1 = posición 3 ... etc
+        return csvString.toString();
+    }
 
-        System.out.print(Arrays.toString(reversed));
+    public static void main(String[] args) {
+        int[][] inputArray = {
+                {0, 1, 2, 3, 4},
+                {10, 11, 12, 13, 14},
+                {20, 21, 22, 23, 24},
+                {30, 31, 32, 33, 34}
+        };
 
+        String csvRepresentation = arrayToCSV(inputArray);
+        System.out.println(csvRepresentation);
     }
 }
