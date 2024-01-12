@@ -10,11 +10,11 @@ public class Login {
 
         do {
             Scanner myFName = new Scanner(System.in);
-            System.out.println("Enter your user name: ");
+            System.out.print("Enter your user name: ");
             user_name = myFName.nextLine();
 
             Scanner myPass = new Scanner(System.in);
-            System.out.println("Enter your pasword: ");
+            System.out.print("Enter your pasword: ");
             password = myPass.nextLine();
 
             if (Log_In(user_name, password)) {
@@ -24,7 +24,7 @@ public class Login {
 
             else {
                 attempts ++;
-                System.out.println("Wrong user name or password. Please try again." +
+                System.out.println("Wrong user name or password. Please try again. " +
                         "You have " + (3 - attempts) + " attempts left");
             }
         }
@@ -42,9 +42,6 @@ public class Login {
         }
     }
 }
-
-
-
 
 /*
 
