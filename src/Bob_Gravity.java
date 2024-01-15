@@ -1,24 +1,19 @@
 import java.util.Arrays;
 
-public class Test {
+public class Bob_Gravity {
 
     public static void main(String[] args) {
         // Example usage
         int[] initialConfiguration = {4, 2, 8, 3};
-        char direction = 'L';
+        char direction = 'L'; // Left = reversed; Right = in order
 
         int[] result = switchGravity(initialConfiguration, direction);
 
-        System.out.println("Here" + Arrays.toString(result));
-
-        // Print the result
-        for (int i = 0; i < result.length; i++) {
-            System.out.print(result[i] + " ");
-        }
+        System.out.println("Result: " + Arrays.toString(result));
     }
 
-    public static int[] switchGravity(int[] configuration, char direction) {
-        // Sorting the array in ascending order for 'L' and descending order for 'R'
+    public static int[] switchGravity(int[] configuration, char direction) { // Sorting function
+
         if (direction == 'R') {
             Arrays.sort(configuration);
         } else if (direction == 'L') {
@@ -29,13 +24,13 @@ public class Test {
         return configuration;
     }
 
-    // Helper method to reverse an array
-    private static void reverseArray(int[] arr) {
+    private static void reverseArray(int[] arr) { // Reverse the array
+
         int left = 0;
         int right = arr.length - 1;
 
         while (left < right) {
-            // Swap elements at left and right indices
+            // Swap
             int temp = arr[left];
             arr[left] = arr[right];
             arr[right] = temp;

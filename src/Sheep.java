@@ -20,9 +20,10 @@ public class Sheep{
             sheep_danger_position = Sheeps_Wolf.length - (wolf_position + 1);
             System.out.print("Oi! Sheep number " + sheep_danger_position + "! You are about to be eaten by a wolf!");
 
-            }
         }
     }
+}
+
 /*
 
 Cleaner way of doing it
