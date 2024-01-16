@@ -24,7 +24,7 @@ public class Arrays {
         a1_cadenas1 = new String[10]; // contiene 10 valores base: null
 
 
-        //Definicion e instanciación todo junto, (algunos no serán null)
+        // Definicion e instanciación junto, (algunos no serán null)
         int[] a1_enteros2 = {0,1,2,3,4,5,6,7,8,9};
         char[] a1_caracteres2 = {'a','b','c','d','e','f','g','h','i','j'};
         boolean[] a1_booleanos2 = new boolean[10]; //contiene 10 valores base: "false"
