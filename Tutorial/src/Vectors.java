@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Vectors {
 
-    public static void main(String[] args) { // This comment is only in GitHub. Not made in local Eclipse
+    public static void main(String[] args) {
 
         final int NUM = 5;
 

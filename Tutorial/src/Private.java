@@ -2,8 +2,6 @@ public class Private {
 
     public static void main(String[] args) {
         // Auto-generated method stub
-
-
         class Prueba {
 
             private int atributo;

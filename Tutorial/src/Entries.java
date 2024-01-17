@@ -5,11 +5,13 @@ public class Entries {
     public static void main(String[] args) {
         // Vamos a leer entradas de usuario
 
-        //Definimos las variables
+        // Definimos las variables
+
         int a,b,c;
         Scanner entrada = new Scanner(System.in);
 
-        //Código
+        // Código
+
         System.out.println("Teclea un número :");
         a = entrada.nextInt();
 

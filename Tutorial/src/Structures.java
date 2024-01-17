@@ -3,25 +3,29 @@ import java.util.Scanner;
 public class Structures {
 
     public static void main(String[] args) {
+
         // Código para control de flujo
         // Estructuras de Control y Estructuras de Repetición
 
-        //Definición de variables
+        // Definición de variables
 
         Scanner entradaint = new Scanner(System.in);
         Scanner entradachar = new Scanner(System.in);
         int primervalor;
         int factorial, i, j, vocales, consonantes, espacios;
         char letra;
-        String valor, cadena1, cadena2 = "";
+        String valor;
+        String cadena1;
+        StringBuilder cadena2 = new StringBuilder();
 
-        //ESTRUCTURAS DE CONTROL
+        // ESTRUCTURAS DE CONTROL
 
-        //tecleamos número entero con signo
-        System.out.print("Teclear valor : ");
+        // Tecleamos número entero con signo
+
+        System.out.print("Teclear valor: ");
         primervalor = entradaint.nextInt();
 
-        //IF identificamos número par
+        // IF identificamos número par
         if (primervalor % 2 == 0) {
 
             System.out.println(primervalor + " es par");
@@ -30,17 +34,20 @@ public class Structures {
             System.out.println(primervalor + " es impar");
         }
 
-        //IF - ELSE -IF Identificamos número positivo, cero o negativo
+        System.out.println();
+
+        // IF - ELSE -IF Identificamos número positivo, cero o negativo
         if (primervalor < 0) {
             System.out.println(primervalor + " es < 0");
         } else if (primervalor == 0) {
             System.out.println(primervalor + " es = 0");
         } else {
-            System.out.println(primervalor + " es > 0");
+            System.out.println(primervalor + " es > 0 (first)");
         }
 
+        System.out.println();
 
-        //SWITCH Identificamos números positivos, cero o negativos
+        // SWITCH Identificamos números positivos, cero o negativos
 
         if (primervalor < 0) {
             valor = "negativo";
@@ -55,20 +62,22 @@ public class Structures {
             case "negativo" : System.out.println(primervalor + " es < 0");
                 break;
 
-            case "positivo" : System.out.println(primervalor + " es > 0");
+            case "positivo" : System.out.println(primervalor + " es > 0 (switch)");
                 break;
 
             default : System.out.println(primervalor + " es = 0");
 
         }
 
-        //ESTRUCTURAS DE REPETICIÓN
+        System.out.println();
 
-        //WHILE cálculo factorial mediante un while
+        // ESTRUCTURAS DE REPETICIÓN
+
+        // WHILE cálculo factorial mediante un while
 
         if (primervalor < 0) {
             primervalor = Math.abs(primervalor);
-        };
+        }
         factorial = i = 1;
 
         while (i <= primervalor) {
@@ -77,11 +86,12 @@ public class Structures {
             i++;
         }
 
-        System.out.println("factorial es : " + factorial);
+        System.out.println(primervalor + "! es: " + factorial + "\n");
 
-        //WHILE Calculamos si un número es par mediante restas sucesivas
+        // WHILE Calculamos si un número es par mediante restas sucesivas
 
         i = primervalor;
+
         while (i <= 2) {
             i = i - 2;
         }
@@ -91,6 +101,7 @@ public class Structures {
             System.out.println(primervalor+" es impar");
         }
 
+        System.out.println();
 
         // DO WHILE cálculo factorial mediante un do while
 
@@ -99,67 +110,74 @@ public class Structures {
             factorial = factorial * i;
             i++;
 
-        } while (i<= primervalor);
+        } while (i <= primervalor);
         System.out.println("factorial es : " + factorial);
 
-        //DO WHILE sacamos númeo aleatorios hasta que sea el que hemos introducido
+        System.out.println();
+
+        // DO WHILE sacamos números aleatorios hasta que sea el que hemos introducido
 
         do {
 
             i = (int) (10 * Math.random());
-            System.out.print("i = " + i + ",");
+            System.out.print("i = " + i + ", ");
 
         } while (i != primervalor);
-        System.out.println();
 
+        System.out.println("\nFirst DO WHILE done\n");
 
-        //DO WHILE BREAK sacamos número aleatorio hasta que salga el que hemos introducido
+        // DO WHILE BREAK sacamos número aleatorio hasta que salga el que hemos introducido
 
         do {
             i = (int) (10 * Math.random());
             System.out.print("i = " + i + ",");
             if (i == primervalor) break;
         } while (true);
-        System.out.println();
+
+        System.out.println("\nSecond DO WHILE done\n");
 
 
-        //FOR cálculo factorial mediante un for
+        // FOR cálculo factorial mediante un for
 
         for (factorial = i = 1; i <= primervalor; i++) {
             factorial = factorial * i;
         }
-        System.out.println("factorial es : " + factorial);
+        System.out.println(primervalor + " factorial es: " + factorial + "\n");
 
-        //FOR sacamos la tabla de multiplicar
+        // FOR sacamos la tabla de multiplicar
+
         for (i = 1; i <= primervalor; i++) {
             for (j = 1; j <= primervalor; j++) {
-                System.out.print(i + "*" + j + "=" + i*j +" ");
+                System.out.print(i + "*" + j + "=" + i * j +" ");
             }
             System.out.println();
         }
 
-        //FOR calculo de potencias de 2
+        // FOR calculo de potencias de 2
 
         for (i= j= 1; i<=primervalor; i++) {
             j = j*2;
         }
         System.out.println(primervalor + "**2 = " + j);
 
+        System.out.println();
 
-        //FOR Invertimos una cadena de carácters
+        // FOR Invertimos una cadena de carácters
         System.out.print("Teclea string a invertir: ");
         cadena1 = entradachar.nextLine();
 
-        for(i=cadena1.length()-1; i >= 0; i--) {
-            cadena2 = cadena2 + cadena1.charAt(i);
+        for(i = cadena1.length()-1; i >= 0; i--) {
+            cadena2.append(cadena1.charAt(i));
         }
         System.out.println(cadena2);
 
+        System.out.println();
 
         // FOR SWITCH BREAK Contamos vocales, consonantes y espacios.
         vocales = consonantes = espacios = 0;
         cadena1 = cadena1.toLowerCase();
-        for (i=0; i < cadena1.length(); i++) {
+
+        for (i = 0; i < cadena1.length(); i++) {
             letra = cadena1.charAt(i);
             switch (letra) {
                 case 'a':
@@ -173,15 +191,15 @@ public class Structures {
                 default: consonantes++;
             }
         }
-        System.out.println("hay "+vocales+" vocales "+consonantes+" consonantes y "+espacios+" espacios");
+        System.out.println("Hay "+ vocales +" vocales "+ consonantes +" consonantes y "+ espacios +" espacios");
 
-        //FOR CONTINUE Contamos sólo los carácters que no son espacios
+        // FOR CONTINUE Contamos sólo los carácters que no son espacios
 
-        for (i=j=0; i < cadena1.length(); i++) {
+        for (i = 0; i < cadena1.length(); i++) {
             if (cadena1.charAt(i) == ' ') continue;
             j++;
         }
-        System.out.println("hay "+j+" letras que no son espacios");
+        System.out.println("Hay "+ j +" letras que no son espacios");
 
     }
 }
