@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class CharStrings {
 
     public static void main(String[] args) {
-        // Operaciones con Cadenas de Caracters
+        // Operaciones con Cadenas de Caracteres
 
         String cadena1;
         String cadena2;

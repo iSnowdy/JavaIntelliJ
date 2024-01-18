@@ -7,9 +7,9 @@ public class Reversed {
 
         String originalInt = String.valueOf(n);
 
-        int [] reversed = new int[originalInt.length()];
+        int[] reversed = new int[originalInt.length()];
 
-        for (int i = 0; i < originalInt.length(); i ++) {
+        for (int i = 0; i < originalInt.length(); i++) {
             int number = Character.getNumericValue(originalInt.charAt(i));
             reversed[originalInt.length() - 1 - i] = number;
         }
