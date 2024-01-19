@@ -5,7 +5,7 @@ public class Test2 {
 
     public static void main(String[] args) {
 
-        int n = 417;
+        int n = 74;
         int quotient = 1;
         String remainder = "";
 
@@ -39,12 +39,10 @@ public class Test2 {
            reversed = remainder.charAt(i) + reversed;
         } // Reverse a String. Needed only if we wanted to do Decimal -> Binary
 
+        System.out.println(n + " is the original int");
         System.out.println(remainder + " is the incomplete binary");
         System.out.println(converted + " is the converted");
         System.out.println(reversed + " is reversed (decimal to binary)");
-
-
-
 
     }
 }

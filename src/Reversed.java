@@ -14,7 +14,7 @@ public class Reversed {
             reversed[originalInt.length() - 1 - i] = number;
         }
 
-        // 5 - 1 - 0 = posición 4 ... 5 - 1 - 1 = posición 3 ... etc
+        // 5 - 1 - 0 = position 4 ... 5 - 1 - 1 = position 3 ... etc
 
         System.out.print(Arrays.toString(reversed));
 
