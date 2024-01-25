@@ -1,25 +1,32 @@
+import java.util.Arrays;
+
 public class Test3 {
     public static void main(String[] args) {
 
-        String s = "HelloKata";
-        int partLength = 3;
-        int bigcounter = 0;
+        int[] first = { 1, 3, 5 };
+        int[] second = { 2, 3, 3 };
+
+        StringBuilder result = new StringBuilder();
         int counter = 0;
 
-        String spaced = "";
+        for (int i = 0; i < first.length + second.length; i++) {
+            char firstA = Arrays.toString(first).charAt(i+1);
+            char secondA = Arrays.toString(second).charAt(i+1);
 
-        System.out.println(s.length());
-
-        while (s.length() > bigcounter) {
-            spaced = spaced + s.charAt(bigcounter);
-            bigcounter ++;
-            counter ++;
-            if (counter == partLength & bigcounter != s.length()) {
-                spaced = spaced + " ";
-                counter = 0;
+            if (firstA != secondA) {
+                if (firstA < secondA) {
+                    result.append(Character.getNumericValue(firstA));
+                    result.append(Character.getNumericValue(secondA));
+                }
+                else {
+                    result.append(Character.getNumericValue(secondA));
+                    result.append(Character.getNumericValue(firstA));
+                }
             }
         }
 
-        System.out.println(spaced);
+        System.out.println(result);
+        System.out.println(Arrays.toString(first));
+
     }
 }

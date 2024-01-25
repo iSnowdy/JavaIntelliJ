@@ -1,33 +1,33 @@
-import java.util.Scanner;
-
 public class Test {
-    public static void main(String[] args) {
 
-        String[] color = {"rojo"
-                ,
-                "amarillo"
-                ,
-                "verde"
-                ,
-                "blanco"
-                ,
-                "azul"
-                ,
-                "negro"};
-
-
-        System.out.println("Generador aleatorio de banderas\n");
-        Scanner s = new Scanner(System.in);
-
-        System.out.println("¿Cuántas franjas quiere para la bandera?");
-        int franjas = Integer.parseInt(s.nextLine());
-
-        System.out.println("\n-------------------\n");
-
-        for (int i = 0; i < franjas; i++) {
-            System.out.println(color[(int)(Math.random()*6) ]);
-            // Math.random generates a random number between 0 and 1. Thats why we *6 (array max length)
-            System.out.println("\n-------------------\n");
+    public static int daysToReachTop(int columnHeight, int dayClimb, int nightSlide) {
+        if (dayClimb >= columnHeight) {
+            return 1;
         }
+
+        int currentHeight = 0;
+        int days = 0;
+
+        while (currentHeight < columnHeight) {
+            days++;
+            currentHeight += dayClimb;
+
+            if (currentHeight >= columnHeight) {
+                return days;
+            }
+
+            currentHeight -= nightSlide;
+        }
+
+        return days;
+    }
+
+    public static void main(String[] args) {
+        int columnHeight = 10; // ejemplo: altura de la columna
+        int dayClimb = 3;     // ejemplo: subida diaria
+        int nightSlide = 2;   // ejemplo: deslizamiento nocturno
+
+        int result = daysToReachTop(columnHeight, dayClimb, nightSlide);
+        System.out.println("La caracola alcanzará la cima en " + result + " días.");
     }
 }

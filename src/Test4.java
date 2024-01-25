@@ -1,33 +1,50 @@
+import java.util.Arrays;
+
 public class Test4 {
     public static void main(String[] args) {
 
-        int num = 454793;
+        int[] first = { 2, 4, 8 };
+        int[] second = { 2, 4, 6 };
 
-        String until = "";
+        int[] joined = new int[first.length + second.length];
 
-        String numS = Integer.toString(num);
-        StringBuffer output = new StringBuffer(numS);
+        System.arraycopy(first, 0, joined, 0, first.length);
+        System.arraycopy(second, 0, joined, first.length, second.length);
 
-        System.out.println(numS);
-        System.out.println("String length " + numS.length());
+        System.out.println(Arrays.toString(joined));
+        Arrays.sort(joined);
+        System.out.println(Arrays.toString(joined));
 
-        for (int i = 0; i < numS.length() - 1; i++) {
-            int firstP = Integer.parseInt(String.valueOf(numS.charAt(i)));
-            int secondP = Integer.parseInt(String.valueOf(numS.charAt(i+1)));
-            System.out.println(firstP);
-            System.out.println(firstP);
+        StringBuilder result = new StringBuilder();
+        StringBuilder finalresult = new StringBuilder();
 
-            if (firstP % 2 == 1 & secondP % 2 == 1) {
-
-                output = new StringBuffer(numS.substring(0, numS.indexOf(i+1)));
-                output.append("-");
-                System.out.println("Output" + output);
-
-            }
-
+        for (int i : joined) {
+            result.append(i);
         }
 
+        System.out.println("Full " + result);
 
+        for (int i = 0; i < result.length(); i++) {
+            if (i == result.length() - 1) {
+                finalresult.append(result.charAt(result.length() - 1));
+                break;
+            }
+            char firstC = result.charAt(i);
+            char secondC = result.charAt(i+1);
+
+            if (firstC != secondC) {
+                finalresult.append(firstC);
+            }
+        }
+
+        System.out.println("No repeats " + finalresult);
+
+
+        int[] resultado = new int[finalresult.length()];
+        for (int i = 1; i < finalresult.length(); i++) {
+            resultado[i] = Integer.valueOf(finalresult.toString().charAt(i));
+        }
+        System.out.println(Arrays.toString(resultado));
 
 
     }
