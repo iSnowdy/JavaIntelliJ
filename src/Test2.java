@@ -5,44 +5,14 @@ public class Test2 {
 
     public static void main(String[] args) {
 
-        int n = 74;
-        int quotient = 1;
-        String remainder = "";
+        int[] key = {1,1,0,1,0,0,0,1,1,0,0,0,1,0,1,1};
 
-        int converted = 0;
+        int keyLength = key.length;
 
-        while (quotient != 0) {
-
-           if (n / 2 < 1) {
-               quotient = 0;
-           }
-
-           if ((n % 2) == 1) {
-               remainder = remainder + "1";
-               n = n / 2;
-           }
-           else {
-               remainder = remainder + "0";
-               n = n / 2;
-           }
+        int square = (int) Math.sqrt(keyLength); // Square area is sides^2 so sqrt
+        if (square * square != keyLength) {
+            System.out.print("No");
         }
-
-        for (int j = 0; j < remainder.length(); j++) {
-            int bin = Character.getNumericValue(remainder.charAt(j));
-            int number = (int) (Math.pow(2, (remainder.length() - (j + 1))) * bin);
-            converted = converted + number;
-        } // Convert an incomplete Binary to a Decimal
-
-        String reversed = "";
-
-        for (int i = 0; i < remainder.length(); i++) {
-           reversed = remainder.charAt(i) + reversed;
-        } // Reverse a String. Needed only if we wanted to do Decimal -> Binary
-
-        System.out.println(n + " is the original int");
-        System.out.println(remainder + " is the incomplete binary");
-        System.out.println(converted + " is the converted");
-        System.out.println(reversed + " is reversed (decimal to binary)");
 
     }
 }
