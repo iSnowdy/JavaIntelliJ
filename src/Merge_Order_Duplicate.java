@@ -29,7 +29,7 @@ public class Merge_Order_Duplicate {
 
             if (k == 0 || next != result[k - 1]) {
                 // Finally with this if checks if the number is different from the last element added in the result array so we don't get any copies
-                // If its not repeated, then its added to the result array. Also the k == 0 is there to check for the same, but for the first number (can't be repeated)
+                // If it's not repeated, then it's added to the result array. Also the k == 0 is there to check for the same, but for the first number (can't be repeated)
                 result[k++] = next;
             }
         }

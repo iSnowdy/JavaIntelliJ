@@ -1,33 +1,36 @@
+import java.util.Arrays;
+import java.util.Objects;
+
 public class Test {
 
-    public static int daysToReachTop(int columnHeight, int dayClimb, int nightSlide) {
-        if (dayClimb >= columnHeight) {
-            return 1;
+    public static void main(String[] args) {
+
+        int[] key = {1,1,0,1,0,0,0,1,1,0,0,0,1,0,1,1};
+
+        System.out.print(Arrays.toString(key));
+
+        int keyLength = key.length;
+        int ones = 0;
+        int ceros = 0;
+        String result = "";
+
+        int square = (int) Math.sqrt(keyLength); // Square area is sides^2 so sqrt
+        if (square * square != keyLength) {
+            System.out.print("No");
         }
 
-        int currentHeight = 0;
-        int days = 0;
+        System.out.println(square);
+        System.out.println(keyLength);
 
-        while (currentHeight < columnHeight) {
-            days++;
-            currentHeight += dayClimb;
-
-            if (currentHeight >= columnHeight) {
-                return days;
+        for (int i = 0; i < key.length; i++) {
+            if (key[square] == key[square + 1]) {
+                result = "Yes";
+            }
+            else {
+                result = "No";
             }
 
-            currentHeight -= nightSlide;
         }
-
-        return days;
-    }
-
-    public static void main(String[] args) {
-        int columnHeight = 10; // ejemplo: altura de la columna
-        int dayClimb = 3;     // ejemplo: subida diaria
-        int nightSlide = 2;   // ejemplo: deslizamiento nocturno
-
-        int result = daysToReachTop(columnHeight, dayClimb, nightSlide);
-        System.out.println("La caracola alcanzará la cima en " + result + " días.");
+        System.out.print(result);
     }
 }
