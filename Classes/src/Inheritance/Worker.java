@@ -22,35 +22,35 @@ public class Worker {
     public String getName() {
         return name;
     }
-    public void setName() {
+    public void setName(String name) {
         this.name = name;
     }
 
     public String getPosition() {
         return position;
     }
-    public void setPosition() {
+    public void setPosition(String position) {
         this.position = position;
     }
 
     public String getAddress () {
         return address;
     }
-    public void setAddress() {
+    public void setAddress(String address) {
         this.address = address;
     }
 
     public String getPhoneNumber() {
         return phoneNumber;
     }
-    public void setPhoneNumber() {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
     public String getnSS() {
         return nSS;
     }
-    public void setnSS() {
+    public void setnSS(String nSS) {
         this.nSS = nSS;
     }
 

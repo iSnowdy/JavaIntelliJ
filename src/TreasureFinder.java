@@ -53,7 +53,7 @@ public class TreasureFinder {
                 }
             System.out.println();
             }
-            System.out.println(" ----------\n 0 1 2 3 4\n");
+            System.out.println(" ----------\n 0 1 2 3 4 5 6\n");
 
             Scanner myX = new Scanner(System.in);
             System.out.print("X coordinate: ");
@@ -101,6 +101,6 @@ public class TreasureFinder {
             }
             System.out.println();
         }
-        System.out.println("\" ----------\\n 0 1 2 3 4\\n\"");
+        System.out.println("\" ----------\\n 0 1 2 3 4 5\\n\"");
     }
 }
