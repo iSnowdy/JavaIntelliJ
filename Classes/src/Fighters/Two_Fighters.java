@@ -36,38 +36,31 @@ public class Two_Fighters {
         this.health -= health;
     }
 
+    public String fight(Two_Fighters opponent, String firstArracker) {
 
+        Two_Fighters attacker = firstArracker.equals(this.name) ? this : opponent;
+        Two_Fighters defender = firstArracker.equals(this.name) ? opponent : this;
+        // This sets the name of the fighter. If Lew is attacking first, then he's the attacker. And Harry defender
 
+        do {
+            defender.damage(attacker.getDamagePerAttack());
 
-    /*
-    public String attack (String fighter1, String fighter2, String firstAttacker) {
+            System.out.println(String.format("%s attacks %s; %s now has %d health.",
+                    attacker.getName(), defender.getName(),
+                    defender.getName(), defender.getHealth()));
 
-        if (getHealth() > 0) {
-            while (getHealth() > 0) {
-                if (firstAttacker == fighter1) {
-                    System.out.println(String.format("%s attacks %s; %s now has " +
-                        getHealth() + " health.", fighter1, fighter2));
-                    this.health = health - Two_Fighters(fighter1, this.health, this.damagePerAttack);
-                }
-                else {
-                    System.out.println(String.format("%s attacks %s; %s now has " +
-                            getHealth() + " health.", fighter2, fighter1));
-                    this.health = health - Two_Fighters(fighter2, this.health, this.damagePerAttack);
-                }
-            }
+            Two_Fighters temp = attacker;
+            attacker = defender;
+            defender = temp;
+        }
+        while (attacker.getHealth() > 0 && defender.getHealth() > 0);
+
+        if (this.getHealth() <= 0) {
+            return opponent.getName();
         }
         else {
-            return String.format("%s attacks %s: %s now has " + getHealth() + " health " +
-                    "and is dead. %s wins.", fighter1, fighter2, fighter2, fighter1);
+            return this.getName();
         }
-
-        return "";
     }
-
-     */
-
-
-
-
 
 }

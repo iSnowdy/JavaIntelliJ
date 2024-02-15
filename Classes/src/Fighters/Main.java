@@ -1,5 +1,7 @@
 package Fighters;
 
+import java.util.Objects;
+
 public class Main extends Two_Fighters{
     public static void main(String[] args) {
 
@@ -16,18 +18,34 @@ public class Main extends Two_Fighters{
 
         String firstAttacker = "Lew";
 
-        do  {
-            if (firstAttacker.equals(fighter1)) {
-                System.out.println(String.format("%s attacks %s; %s now has " +
-                        fighter2.getHealth() + " health.", fighter1, fighter2));
+        String winner = fighter1.fight(fighter2, firstAttacker);
 
-            }
-            else {
-                System.out.println(String.format("%s attacks %s; %s now has " +
-                        fighter1.getHealth() + " health.", fighter2, fighter1));
-                // this.health = Two_Fighters(fighter2, this.health, this.damagePerAttack);
-            }
-        }
-        while (fighter1.getHealth() > 0 || fighter2.getHealth() > 0);
+        String result = Objects.equals(winner, fighter1.getName()) ? String.format("%s attacks %s. %s now has %d health " +
+                "and is dead. %s wins.", fighter1.getName(), fighter2.getName(), fighter2.getName(), fighter2.getHealth(), fighter1.getName())
+                : String.format("%s attacks %s. %s now has %d health " + "and is dead. %s wins.",
+                fighter2.getName(), fighter1.getName(), fighter1.getName(), fighter2.getHealth(), fighter1.getName());
+
+        System.out.println(result);
+
+        System.out.println(fighter1.getHealth());
+        System.out.println(fighter2.getHealth());
+
     }
 }
+
+/*
+
+public class Kata {
+  public static String declareWinner(Fighter fighter1, Fighter fighter2, String firstAttacker) {
+    Fighter a=fighter1, b=fighter2;
+    if (firstAttacker.equals(fighter2.name)) {
+      a = fighter2; b = fighter1;
+    }
+    while (true) {
+      if ((b.health -= a.damagePerAttack) <= 0) return a.name;  // a wins
+      if ((a.health -= b.damagePerAttack) <= 0) return b.name;  // b wins
+    }
+  }
+}
+
+ */
