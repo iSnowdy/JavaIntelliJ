@@ -37,7 +37,7 @@ public class Consultor extends Worker {
 
     @Override
     public String toString() {
-        return "Consultor [hours = " + hours + ", tarifa = " + fee + ", getName() = " + getName() + ", getPosition() = "
+        return "Consultor [hours = " + hours + ", tariff = " + fee + ", getName() = " + getName() + ", getPosition() = "
                 + getPosition() + ", getAddress() = " + getAddress() + ", getPhoneNumber() = " + getPhoneNumber()
                 + ", getnSS() = " + getnSS() + "]";
     }

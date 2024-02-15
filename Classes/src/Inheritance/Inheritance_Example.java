@@ -15,6 +15,9 @@ public class Inheritance_Example {
         System.out.println(employee);
         System.out.println(consultor);
 
+        System.out.println(employee.calculatePayment());
+        System.out.println(consultor.calculatePayment());
+
         System.out.println();
 
 
