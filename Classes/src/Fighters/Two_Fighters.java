@@ -49,7 +49,7 @@ public class Two_Fighters {
                     attacker.getName(), defender.getName(),
                     defender.getName(), defender.getHealth()));
 
-            Two_Fighters temp = attacker;
+            Two_Fighters temp = attacker; // String swap
             attacker = defender;
             defender = temp;
         }
@@ -62,5 +62,4 @@ public class Two_Fighters {
             return this.getName();
         }
     }
-
 }
